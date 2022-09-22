@@ -11,7 +11,7 @@ find_path(NUMA_INCLUDE_DIR
   HINTS ${INCLUDE_INSTALL_DIR})
 
 find_library(NUMA_LIBRARY
-  NAMES numactl
+  NAMES numa
   HINTS ${LIB_INSTALL_DIR})
 
 
