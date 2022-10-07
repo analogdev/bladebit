@@ -17,8 +17,8 @@ Only **Linux** & **Windows** are supported.
 Install the following packages:
 ```bash
 # CentOS or RHEL-based
-sudo yum group install -y "Development Tools"
-sudo yum install -y cmake gmp-devel numactl-devel
+sudo dnf group install -y "Development Tools"
+sudo dnf install -y cmake gmp-devel numactl-devel
 
 # Ubuntu or Debian-based
 sudo apt install -y build-essential cmake libgmp-dev libnuma-dev
@@ -38,7 +38,7 @@ git clone https://github.com/Chia-Network/bladebit.git && cd bladebit
 mkdir -p build && cd build
 
 # Generate config files & build
-cmake ..
+cmake -D CMAKE_CXX_FLAGS="-O3 -march=native -flto=auto -ffast-math" ..
 cmake --build . --target bladebit --config Release
 ```
 
